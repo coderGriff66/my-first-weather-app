@@ -104,3 +104,6 @@ function getCurrentPosition() {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
+
+//remember to add in celcius & farhenheit conversion functions
+
