@@ -102,3 +102,31 @@ function getCurrentPosition() {
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
+functon showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-now");
+
+  clesiusLink.classList.remove("active");
+  fahrenheitLink.classLink.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+functon showCelsiusTemperature(event) {
+  event.preventDefault();
+  temperatureElement = document.querySelector("#temp-now");
+
+  fahrenheitLink.classList.remove("active");
+  celsiustLink.classLink.add("active");
+  
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celciusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celcius");
+celsiustLink.addEventListener("click", showCelsiusTemperature);
+
+findCity("New York");
