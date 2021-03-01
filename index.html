@@ -17,8 +17,10 @@
 
   <div class="container">
     <div class ="weatherApp">
-
-  <!-- This section to pull day, date, time and city entered -->
+      <div>
+        <img class="bkgd-pic"
+        src="pexels-ekrulila-2127869" alt="Maps" width="100%"/>
+      </div>
 
       <div class="row">
           <div class="col-6">
@@ -42,15 +44,13 @@
           </div>
         
         <div class="col-2">
-          <button class="current-button" id="current-button">Current</button>
+          <button class="current-button" id="current-button">CURRENT</button>
           </div>
         </div>
       </form>
         <div class="city-chosen">
           <h1 id="city">Detroit</h1>
         </div>
-
-  <!-- Current weather conditions grouping left under city chosen -->
 
       <div class="row">
         <div class="col-5">
@@ -59,26 +59,21 @@
                 <li><span>Feels Like: <strong id="feels">38</strong></span><span><strong>&#176</strong></span></li>
                 <li><span>Barometer: <strong id="barom">29.98</strong></span></li>
                 <li><span>Humidity: <strong id="humid">46</strong></span><span><strong>%</strong></span></li>
-                <li><span>Winds: <strong id="direction">SW</strong></span><span><strong id="winds">&nbsp;10</strong></span><span><strong>mph</strong></span></li>
+                <li><span>Windspeed: <span><strong id="winds">10</strong></span><span><strong>&nbsp;km/h</strong></span></li>
               </ul>
             </div>
         </div>
-            
-  <!--Wx icon, current temp and skies near top right, choice of temp in farenheit or celcius -->
-
-        <div class="col-7 big-temp">
-          <div class="card rt-wx">
-              <h2 class="tempNow" id="temp-now" >40<span>&#176</span></h2>
-              <i class="fas fa-sun main-wx" id="big-temp-icon"></i>
-              <button class=farhenheit id="farhenheit-button">F</button>
-              <button class= celcius id="celcius-button">C</button>
+      
+      <div class="col-7 big-temp">
+        <div class="card rt-wx">
+              <h2 class="tempNow" id="temp-now" >50<span>&#176</span></h2>
+              <img src="" alt="Clear" class="large-icon" id="large-icon"/>
+              <span class="units"><a href="#" id="celcius" class="active"><strong>
+                &#176C</strong></a>&nbsp;&nbsp<a href="#" id="fahrenheit" class="active"><strong>&#176F</strong></a></span>
               <h3 class="skyNow" id="sky-now">Sunny</h3>
-          </div>
         </div>
       </div>
-
-  <!-- What your day will look like temp-wise  4 pannels: time, wx icon, temp -->
-
+     
       <h4 class="your-day">PLAN YOUR DAY</h4>
       
         <div class="row middle">
@@ -127,11 +122,8 @@
             </div>
           </div>
         </div>
-          
-
-  <!-- Forecast for next 5 days  5 panels: day, wx icon, hi-low temp -->
-  
-      <h4 class="five-day">5 DAY PLANNER</h4> 
+   
+     <h4 class="five-day">5 DAY PLANNER</h4> 
           
       <div class="row last">
         <div class="col">
@@ -182,6 +174,7 @@
         </div>
         <p> <a href="https://github.com/coderGriff66/my-first-weather-app" target="_blank" class="myinfo">Open-source code</a>&nbsp;<span>by Jennifer Griffin</span>
         </p>
+        <footer>Background courtesy</footer>
      
     </div>
   </div>

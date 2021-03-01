@@ -77,16 +77,13 @@ function showTemp(response) {
   h1.innerHTML = city;
   let h3 = document.querySelector("#sky-now");
   h3.innerHTML = response.data.weather[0].description;
-  //document.querySelector("#big-temp-icon").innerHTML = response.data.weather[2];
-  document.querySelector("#feels").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
-  document.querySelector("#barom").innerHTML = response.data.main.pressure;
+  let iconElement = document.querySelector("#large-icon");
+  iconElement.setAttribute = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  document.querySelector("#feels").innerHTML = Math.round(response.data.main.feels_like);
+  document.querySelector("#barom").innerHTML = +num.toFixed(2)(response.data.main.pressure);
   document.querySelector("#humid").innerHTML = response.data.main.humidity;
-  //document.querySelector("#direction").innerHTML = response.data.wind.direction[1];
-  document.querySelector("#winds").innerHTML = Math.round(
-    response.data.wind.speed
-  );
+  document.querySelector("#winds").innerHTML = Math.round(response.data.wind.speed);
 }
 
 function showPosition(position) {
@@ -104,6 +101,4 @@ function getCurrentPosition() {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
-
-//remember to add in celcius & farhenheit conversion functions
 
