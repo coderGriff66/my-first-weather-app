@@ -77,7 +77,7 @@ function showTemp(response) {
   h3.innerHTML = response.data.weather[0].description;
   let iconElement = document.querySelector("#icon");
 
-  celciusTemperature = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
   
   document.querySelector("#feels").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#barom").innerHTML = response.data.main.pressure.toFixed(2);
@@ -92,7 +92,7 @@ function showPosition(position) {
   let longitude = position.coords.longitude;
   let apiKey = "06e5d3dda0232566f39a1df37e2d5cdd";
   let endPoint = "https://api.openweathermap.org/data/2.5/weather?q";
-  let apiUrl = `${endPoint}&lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `${endPoint}&lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
@@ -103,8 +103,8 @@ function getCurrentPosition() {
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentPosition);
 
-functon showFahrenheitTemperature(event) {
-  event.preventDefault();
+functon showFahrenheitTemperature(Event) {
+Event.preventDefault();
   let temperatureElement = document.querySelector("#temp-now");
   let fahrenheitTemperature = ("celsiusTemperature" * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(showFahrenheitTemperature);
@@ -113,22 +113,19 @@ functon showFahrenheitTemperature(event) {
   fahrenheit.classList.add("active");
 }
 
-functon showCelsiusTemperature(event) {
-  event.preventDefault();
+functon showCelsiusTemperature(Event) {
+Event.preventDefault(); 
   let = temperatureElement = document.querySelector("#temp-now");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
-  fahrenheit.classList.remove("active");
-  celsius.classList.add("active");
-  
+ celsius.classList.add("active");
+ fahrenheit.classList.remove("active"); 
 }
 
-let celciusTemperature = null;
+let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", findCity);
-
-
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheitTemperature);
