@@ -114,6 +114,16 @@ footer {
   right: -170px;
 }
 
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
 .top-header {
   padding-top: 30px;
 }

@@ -65,8 +65,6 @@ function findCity(event) {
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", findCity);
 
 function showTemp(response) {
   let city = response.data.name;
@@ -78,6 +76,8 @@ function showTemp(response) {
   let h3 = document.querySelector("#sky-now");
   h3.innerHTML = response.data.weather[0].description;
   let iconElement = document.querySelector("#icon");
+
+  celciusTemperature = response.data.main.temp;
   
   document.querySelector("#feels").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#barom").innerHTML = response.data.main.pressure.toFixed(2);
@@ -106,23 +106,29 @@ currentButton.addEventListener("click", getCurrentPosition);
 functon showFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp-now");
-
-  clesius.classList.remove("active");
-  fahrenheit.classList.add("active");
-  let fahrenheitTemperature = (25 * 9) / 5 + 32;
+  let fahrenheitTemperature = ("celsiusTemperature" * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(showFahrenheitTemperature);
+  
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
 }
+
 functon showCelsiusTemperature(event) {
   event.preventDefault();
-  temperatureElement = document.querySelector("#temp-now");
+  let = temperatureElement = document.querySelector("#temp-now");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
   fahrenheit.classList.remove("active");
   celsius.classList.add("active");
   
-  temperatureElement.innerHTML = Math.round(showCelsiusTemperature);
 }
 
 let celciusTemperature = null;
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", findCity);
+
+
 
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", showFahrenheitTemperature);
