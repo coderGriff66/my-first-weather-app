@@ -61,7 +61,7 @@ function findCity(event) {
   cityElement.innerHTML = searchCity.value;
 
   let apiKey = "06e5d3dda0232566f39a1df37e2d5cdd";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity.value}&appid=${apiKey}&units=metric`;
 
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemp);
 }
