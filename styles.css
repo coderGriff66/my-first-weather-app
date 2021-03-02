@@ -1,6 +1,5 @@
 .container {
-  /*background: radial-gradient(#f1f1b9, #f1e83b, #ffe37c, #f3d47f, #fffcd3);"
- */
+  background-image: url("https://www.pexels.com/photo/white-and-black-map-2127869"alt="Clouds");
   border: rgb(124, 50, 0) solid 2px;
   border-radius: 8px;
   max-width: 650px;
@@ -12,9 +11,6 @@
   max-width: 600px;
 }
 
-.bkgd-pic {
-  width: fit-content;
-}
 h1 {
   padding-top: 10px;
   padding-left: 25px;
@@ -42,6 +38,10 @@ h5 {
   text-align: center;
   padding-top: 5px;
 }
+footer {
+  font-size: 12px;
+  padding-bottom: 15px;
+}
 
 .current-button {
   position: relative;
@@ -52,7 +52,7 @@ h5 {
   border-radius: 4px;
 }
 
-.current-button:hoover {
+.current-button:hover {
   background: rgb(161, 115, 84);
   color: beige;
   cursor: pointer;
